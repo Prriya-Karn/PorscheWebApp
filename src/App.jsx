@@ -8,10 +8,16 @@ import "./index.css";
 import Footer from "./component/Footer";
 import { Routes, Route } from "react-router-dom";
 import Model from "./pages/ModelOverview/Model";
+import TestCar from "./TestCar";
+import Configure from "./pages/ModelOverview/Configure";
+
+
+
 
 const App = () => {
     return (
         <Routes>
+            <Route path="/car" element={<TestCar />} />
             <Route path="/" element={
                 <div>
                     <HeroSection />
@@ -23,7 +29,8 @@ const App = () => {
                 </div>
             }
             />
-            <Route path="/model" element={<Model />} />
+            <Route path="/model/:title" element={<Model />} />
+            <Route path="/configure" element = {<Configure />}/>
         </Routes>
     );
 };

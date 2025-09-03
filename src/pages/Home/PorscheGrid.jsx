@@ -1,5 +1,5 @@
-import React from "react";
 import { ArrowRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const cars = [
   {
@@ -33,6 +33,7 @@ export default function PorscheGrid() {
     <div className="w-full flex justify-center py-12 bg-black">
       <div className="flex gap-6 max-w-5xl w-full px-4 group">
         {cars.map((car, idx) => (
+
           <div
             key={idx}
             className="
@@ -43,6 +44,7 @@ export default function PorscheGrid() {
               hover:flex-[2]
             "
           >
+            <NavLink to={`/model/${car.title}`}>
             {/* Car image */}
             <img
               src={car.image}
@@ -65,7 +67,9 @@ export default function PorscheGrid() {
               </p>
               <ArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </div>
+            </NavLink>
           </div>
+
         ))}
       </div>
     </div>
