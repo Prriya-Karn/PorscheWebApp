@@ -152,16 +152,6 @@ export default function Model() {
     }
   };
 
-
-
-
-
-
-
-
-
-
-
   return (
     <div>
       <Navbar />

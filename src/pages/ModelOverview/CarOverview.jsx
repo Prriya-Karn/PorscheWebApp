@@ -1,5 +1,9 @@
+import { Fragment } from "react";
+import InteriorExter from "./InteriorExter";
+
 export default function CarOverview() {
     return (
+        <Fragment>
         <div className="bg-white">
             <div className="flex mt-20 mb-12 justify-center">
                 <img
@@ -55,5 +59,8 @@ export default function CarOverview() {
                 />
             </div>
         </div>
+            <InteriorExter />
+        </Fragment>
+
     );
 }

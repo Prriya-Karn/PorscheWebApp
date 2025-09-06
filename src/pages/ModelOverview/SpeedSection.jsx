@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import Buttons from "../../component/Buttons";
 import CarOverview from "./CarOverview";
+import InteriorExter from "./InteriorExter";
 
 export default function SpeedSection() {
     const { ref, inView } = useInView({
@@ -74,6 +75,7 @@ export default function SpeedSection() {
         </div>
 
             <CarOverview />
+            
         </Fragment>
     );
 }
