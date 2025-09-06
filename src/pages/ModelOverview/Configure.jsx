@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-// // https://cdn.ui.porsche.com/porsche-design-system/model-signatures/panamera.6dae809.svg
 const Configure = () => {
     const [carColor, setCarColor] = useState("#7D1722");
     return (
@@ -30,7 +29,6 @@ const Configure = () => {
                     </div>
                 </div>
             </div>
-
         </Fragment>
     )
 }

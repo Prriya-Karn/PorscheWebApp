@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import Buttons from "../../component/Buttons";
+import CarOverview from "./CarOverview";
 
 export default function SpeedSection() {
     const { ref, inView } = useInView({
@@ -9,6 +11,7 @@ export default function SpeedSection() {
     });
 
     return (
+        <Fragment>
         <div
             ref={ref}
             className="flex items-center justify-center gap-12 min-h-screen bg-white px-16"
@@ -57,6 +60,7 @@ export default function SpeedSection() {
                         Top speed
                     </p>
                 </div>
+                    <Buttons text="View all technical details" />
             </div>
 
             {/* Right Car Image */}
@@ -68,5 +72,8 @@ export default function SpeedSection() {
                 />
             </div>
         </div>
+
+            <CarOverview />
+        </Fragment>
     );
 }

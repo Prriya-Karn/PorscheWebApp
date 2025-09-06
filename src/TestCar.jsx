@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import SpeedSection from "./pages/ModelOverview/SpeedSection";
 import { NavLink } from "react-router-dom";
+import Buttons from "./component/Buttons";
 
 export default function TestCar() {
     return (
@@ -44,9 +45,7 @@ export default function TestCar() {
                             </button>
                         </NavLink>
 
-                        <button className="px-6 py-3 border border-black text-black rounded-md hover:bg-gray-100 transition">
-                            Find new or used
-                        </button>
+                        <Buttons text="Find new or used" />
                     </div>
                 </div>
             </div>
