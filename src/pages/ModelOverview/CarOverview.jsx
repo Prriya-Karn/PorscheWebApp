@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import InteriorExter from "./InteriorExter";
+import HighlightsCard from "./HighlightsCard";
+import Contact from "./Contact";
 
 export default function CarOverview() {
     return (
@@ -60,6 +62,8 @@ export default function CarOverview() {
             </div>
         </div>
             <InteriorExter />
+            <HighlightsCard/>
+            <Contact/>
         </Fragment>
 
     );
