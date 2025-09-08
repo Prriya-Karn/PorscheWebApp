@@ -2,18 +2,19 @@ import React from "react";
 
 const FindPorsche = () => {
   return (
-    <div className="flex max-w-4xl mt-30 mx-auto rounded-xl overflow-hidden shadow-lg">
+    <div className="lg:px-40 px-5">
+    <div className="flex md:flex-row flex-col bg-red-950 lg:h-96 max-w-6xl mt-30 mx-auto rounded-xl overflow-hidden shadow-lg">
       {/* Left Image Section */}
-      <div className="w-1/2 h-full">
+      <div className="w-full lg:w-1/2">
         <img
-          src="https://porsche.imgix.net/-/media/38BB0AC8E77B4B7F8993D0800CE70EE9_0A4CBE5C6BA9497B875D72F44C5F44C1_718---Mobile_New?h=1757&iar=0&w=989&auto=format"
+          src="https://a.storyblok.com/f/338913/1920x1079/4f465bb7d6/16-9_porsche_finder.jpg/m/1638x921/filters:format(webp):quality(45)"
           alt="Porsche"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
         />
       </div>
 
       {/* Right Content Section */}
-      <div className="w-1/2 bg-black text-white flex flex-col justify-center p-10">
+      <div className="w-full lg:w-1/2 bg-black text-white flex flex-col justify-center p-10">
         <h2 className="text-3xl font-bold leading-snug mb-4">
           Find your new or pre-owned Porsche.
         </h2>
@@ -26,6 +27,7 @@ const FindPorsche = () => {
           Find your Porsche
         </button>
       </div>
+    </div>
     </div>
   );
 };

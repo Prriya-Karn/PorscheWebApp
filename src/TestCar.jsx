@@ -70,7 +70,7 @@ export default function TestCar() {
                             <img
                                 src={car.textImg}
                                 alt="Panamera watermark"
-                                className="absolute top-4 left-1/2 transform -translate-x-1/2 w-2/3 opacity-9 z-0"
+                                className="absolute md:top-4 sm:top-10 top-30 left-1/2 transform -translate-x-1/2 w-2/3 opacity-9 z-0"
                             />
 
                             {/* Car image */}
@@ -94,16 +94,14 @@ export default function TestCar() {
 
                                 {/* Buttons */}
                                 <div className="mt-6 flex space-x-4 justify-center">
-                                    <button className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition">
-                                        Change model
-                                    </button>
+                                   
                                     <NavLink to="/configure">
-                                        <button className="px-6 py-3 border border-black text-black rounded-md hover:bg-gray-100 transition">
+                                        <button className="md:px-6 px-20 py-3 bg-black text-white border border-black rounded-md hover:bg-gray-100 transition">
                                             Configure
                                         </button>
                                     </NavLink>
 
-                                    <Buttons text="Find new or used" />
+                                 
                                 </div>
                             </div>
                         </Fragment>

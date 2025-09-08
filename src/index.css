@@ -51,3 +51,10 @@ body {
 .color-button.selected {
   border-color: #000;
 }
+
+
+
+.object-fit-fix {
+  object-fit:contain;
+  object-position: center;
+}

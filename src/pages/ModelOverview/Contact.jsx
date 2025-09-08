@@ -18,7 +18,7 @@ const Contact = () => {
     ];
 
     return (
-        <div className="max-w-3xl mt-40 gap-5 relative mx-auto my-16 grid grid-cols-1 md:grid-cols-2">
+        <div className="lg:max-w-3xl md:max-w-2xl sm:max-w-xl max-w-sm mt-40 gap-5 relative mx-auto my-16 grid grid-cols-1 md:grid-cols-2">
             {cards.map((card, index) => (
                 <div
                     key={index}

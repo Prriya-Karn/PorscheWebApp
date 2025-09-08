@@ -6,14 +6,14 @@ import Contact from "./Contact";
 export default function CarOverview({car}) {
     return (
         <Fragment>
-        <div className="bg-white">
+        <div className="bg-white mt-40">
         
         {
             car.map((e) => (
                 <Fragment key={e.title}>
-                    <div className="flex mt-20 mb-12 justify-center">
+                    <div className="flex  mt-20 mb-12 justify-center">
                 <img
-                    className="w-96 max-w-full"
+                    className="sm:w-96 w-70 max-w-full"
                     src={e.textImg}
                 />
             </div>
@@ -27,7 +27,7 @@ export default function CarOverview({car}) {
                     <img
                         src="https://images-porsche.imgix.net/-/media/7BE508A260E849CAB6699E73962DCED5_C19C5E14A2A24FD9B10B0384176E92D3_PA24P5AOX0001-panamera-back?w=1200&q=45&auto=format"
                         alt="Porsche Panamera"
-                        className="w-[900px] max-w-full rounded-lg shadow-lg"
+                        className="lg:w-[900px] md:w-[600px] sm:w-[500px] w-[400px] max-w-full rounded-lg shadow-lg"
                     />
                 </div>
 
@@ -35,14 +35,14 @@ export default function CarOverview({car}) {
                 <img
                     src="https://images-porsche.imgix.net/-/media/7BE508A260E849CAB6699E73962DCED5_C19C5E14A2A24FD9B10B0384176E92D3_PA24P5AOX0001-panamera-back?w=800&q=45&auto=format"
                     alt="Panamera driving"
-                    className="w-[500px] h-1/2 rounded-lg shadow-lg absolute bottom-40 right-10 z-20"
+                    className="lg:w-[500px] md:w-[400px] sm:w-[300px] w-full right-20 lg:h-1/2 md:h-80 h-60 rounded-lg shadow-lg absolute lg:bottom-40 bottom-10 sm:right-10 z-20"
                 />
 
                 {/* Black Section with text */}
                 <div className="bg-black h-[800px] text-white relative z-0 px-6 md:px-20 py-40 -mt-32">
 
                     {/* Left Content */}
-                    <div className="max-w-sm ml-30 mt-5">
+                    <div className="max-w-sm ml-5 sm:ml-12 md:ml-30 mt-5">
                         <h2 className="text-4xl font-bold mb-6 leading-tight">
                             Courage is a decision.
                         </h2>
@@ -59,11 +59,11 @@ export default function CarOverview({car}) {
 
             </div>
 
-            <div className="flex justify-center relative z-10">
+            <div className="sm:flex hidden justify-center relative z-10">
                 <img
                     src="https://images-porsche.imgix.net/-/media/7BE508A260E849CAB6699E73962DCED5_C19C5E14A2A24FD9B10B0384176E92D3_PA24P5AOX0001-panamera-back?w=1200&q=45&auto=format"
                     alt="Porsche Panamera"
-                    className="w-[500px] absolute -top-50 max-w-full rounded-lg shadow-lg"
+                    className="lg:w-[700px] w-[500px] absolute lg:-top-50 md:-top-20 sm:-top-30 -top-20 max-w-full rounded-lg shadow-lg"
                 />
             </div>
         </div>

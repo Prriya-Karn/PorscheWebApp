@@ -31,55 +31,60 @@ const cars = [
 
 export default function PorscheGrid({ isPorscheGridVisible }) {
   return (
-
     <Fragment>
       <div className="mt-20">
-        <h1 className={`text-5xl px-10 mb-20 tracking-wide ${isPorscheGridVisible ? "text-white" : "text-black"}`}>Your Porsche journey starts now.</h1>
-      
-      <div className="w-full flex justify-center">
-        <div className="flex gap-6 max-w-6xl w-full px-4 group">
+        <h1
+          className={`lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide ${
+            isPorscheGridVisible ? "text-white" : "text-black"
+          }`}
+        >
+          Your Porsche journey starts now.
+        </h1>
 
-          {cars.map((car, idx) => (
-
-            <div
-              key={idx}
-              className="
-              relative rounded-xl overflow-hidden shadow-lg cursor-pointer
-              transition-all duration-500 ease-in-out
-              flex-[1] h-[500px]
-              group-hover:flex-[0.5]
-              hover:flex-[2]
-            "
-            >
-              <NavLink to={`/model/${car.title}`}>
-                {/* Car image */}
-                <img
-                  src={car.image}
-                  alt={car.title}
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
-
-                {/* Top Title */}
-                <h2 className="absolute top-3 left-3 text-white text-3xl font-bold tracking-wide">
-                  {car.title}
-                </h2>
-
-                {/* Bottom Details */}
-                <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
-                  <p className="text-white text-sm max-w-[80%] leading-snug">
-                    {car.description}
-                  </p>
-                  <ArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-              </NavLink>
-            </div>
-
-          ))}
+        <div className="w-full flex flex-col items-center">
+          <div className="max-w-6xl w-full xl:px-4 px-5 flex flex-col gap-6">
+            {/* Split cars into rows of 2 */}
+            {cars.reduce((rows, car, idx) => {
+              if (idx % 2 === 0) rows.push([car]);
+              else rows[rows.length - 1].push(car);
+              return rows;
+            }, []).map((row, rowIdx) => (
+              <div key={rowIdx} className="flex md:flex-row flex-col gap-6 group">
+                {row.map((car, idx) => (
+                  <div
+                    key={idx}
+                    className="
+                      relative rounded-xl overflow-hidden shadow-lg cursor-pointer
+                      transition-all duration-500 ease-in-out
+                      h-[500px]
+                      flex-1
+                      group-hover:flex-[0.8]
+                      hover:flex-[1.2]
+                    "
+                  >
+                    <NavLink to={`/model/${car.title}`}>
+                      <img
+                        src={car.image}
+                        alt={car.title}
+                        className="w-full md:h-full h-[500px] object-cover transform transition-transform duration-500 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
+                      <h2 className="absolute top-3 left-3 text-white text-3xl font-bold tracking-wide">
+                        {car.title}
+                      </h2>
+                      <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+                        <p className="text-white text-sm max-w-[80%] leading-snug">
+                          {car.description}
+                        </p>
+                        <ArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                      </div>
+                    </NavLink>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
       </div>
     </Fragment>
   );

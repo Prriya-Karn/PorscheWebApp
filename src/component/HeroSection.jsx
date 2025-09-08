@@ -25,20 +25,15 @@ const HeroSection = () => {
         className="w-full h-full"
       >
         {heroImages.map((src, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={idx} className="">
             <img
               src={src}
               alt={`Hero Background ${idx}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full bg-no-repeat object-cover"
             />
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Overlay Navbar */}
-      <div className="absolute top-0 left-0 w-full z-10">
-        <Navbar />
-      </div>
 
       {/* Hero Text */}
       <div className="absolute bottom-24 left-12 z-10">

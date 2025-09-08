@@ -19,12 +19,12 @@ const cards = [
 const Discover = () => {
   return (
 <div>
-    <div className="w-full flex mt-20 justify-center py-12 bg-white">
+    <div className="w-full flex mt-16 justify-center py-12 bg-white">
     <h2 className="text-3xl font-bold leading-snug">
       Discover
     </h2>
     </div>
-    <div className="grid grid-cols-3  gap-4 max-w-3xl mx-auto">
+    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-2xl px-4 md:px-0  gap-4 md:max-w-2xl lg:max-w-3xl mx-auto">
     
       {cards.map((card, idx) => (
         <div
@@ -38,7 +38,7 @@ const Discover = () => {
           <img 
             src={card.image} 
             alt={card.title} 
-            className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" 
+            className="w-full h-70   object-cover transition-transform duration-500 group-hover:scale-105" 
           />
 
           {/* Overlay Content */}

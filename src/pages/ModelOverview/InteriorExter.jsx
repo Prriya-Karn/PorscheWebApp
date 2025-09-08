@@ -8,12 +8,12 @@ const InteriorExter = () => {
     }
     return (
         <Fragment>
-            <div className="mt-48 w-full">
+            <div className="md:mt-80 sm:mt-70 mt-20 w-full">
                 {/* Heading */}
                 <Heading text="The Panamera Turbo E-Hybrid only has courageous views." />
 
                 {/* Image with buttons overlay */}
-                <div className="relative flex mt-10 justify-center items-center bg-red-500 mx-auto max-w-5xl rounded-lg">
+                <div className="relative flex mt-10 justify-center items-center  mx-auto max-w-5xl rounded-lg">
                     {/* Background Image */}
                     {
                         active === "Interior" ? (

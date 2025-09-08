@@ -54,9 +54,9 @@ const EngineCarousel = () => {
                                     className="w-[400px] rounded-lg object-contain"
                                 />
                             </div>
-                            <div className="text-left">
-                                <h2 className="text-2xl font-bold mb-4">{slide.title}</h2>
-                                <p className="text-gray-600">{slide.desc}</p>
+                            <div className="text-left mt-10">
+                                <h2 className="text-2xl pl-10 lg:pl-0 font-bold mb-4">{slide.title}</h2>
+                                <p className="text-gray-600 pl-10 lg:pl-0">{slide.desc}</p>
                             </div>
                         </div>
                     </SwiperSlide>

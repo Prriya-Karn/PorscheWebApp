@@ -15,7 +15,7 @@ export default function SpeedSection({ car }) {
         <Fragment>
             <div
                 ref={ref}
-                className="flex items-center justify-center gap-12 min-h-screen bg-white px-16"
+                className="flex  lg:flex-row flex-col items-center justify-center gap-12 min-h-screen bg-white px-16"
             >
                 {
                     car.map((e) => {
@@ -23,14 +23,14 @@ export default function SpeedSection({ car }) {
                             <Fragment key={e.title}>
 
                                 {/* Left Specs */}
-                                <div className="flex flex-col space-y-12">
+                                <div className="flex text-center order-2 lg:order-1 flex-col space-y-12">
                                     {/* Acceleration */}
                                     <div>
-                                        <h2 className="text-6xl">
+                                        <h2 className="sm:text-6xl text-4xl">
                                             {inView && (
                                                 <CountUp end={e.accel} decimals={1} duration={1.2} />
                                             )}
-                                            <span className="text-2xl font-normal">s</span>
+                                            <span className="text-xl font-normal">s</span>
                                         </h2>
                                         <p className="text-gray-600 mt-2">
                                             Acceleration 0 - 100 km/h with Sport Chrono Package
@@ -39,15 +39,15 @@ export default function SpeedSection({ car }) {
 
                                     {/* Power */}
                                     <div>
-                                        <h2 className="text-6xl">
+                                        <h2 className="sm:text-6xl text-4xl">
                                             {inView && (
                                                 <Fragment>
                                                     <CountUp end={e.powerKW} duration={1.2} />
-                                                    <span className="text-2xl font-normal">kW</span> /{" "}
+                                                    <span className="text-xl font-normal">kW</span> /{" "}
                                                     <CountUp end={e.powerPS} duration={1.2} />
                                                 </Fragment>
                                             )}
-                                            <span className="text-2xl font-normal">PS</span>
+                                            <span className="text-xl font-normal">PS</span>
                                         </h2>
                                         <p className="text-gray-600 mt-2">
                                             Power (kW)/Power (PS)
@@ -56,11 +56,11 @@ export default function SpeedSection({ car }) {
 
                                     {/* Top speed */}
                                     <div>
-                                        <h2 className="text-6xl">
+                                        <h2 className="sm:text-6xl text-4xl">
                                             {inView && (
                                                 <CountUp end={e.speed} duration={1.2} />
                                             )}
-                                            <span className="text-2xl font-normal">km/h</span>
+                                            <span className="text-xl font-normal">km/h</span>
                                         </h2>
                                         <p className="text-gray-600 mt-2">
                                             Top speed
@@ -70,7 +70,7 @@ export default function SpeedSection({ car }) {
                                 </div>
 
                                 {/* Right Car Image */}
-                                <div className="flex justify-center items-center">
+                                <div className="flex order-1 lg:order-2 justify-center items-center">
                                     <img
                                         src={e.text2Img}
                                         alt="Porsche Panamera"
