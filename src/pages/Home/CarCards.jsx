@@ -30,7 +30,10 @@ export default function CarCards() {
             <NavLink to={`/car/${car.title.split(" ").join("").replace(".", "").toLowerCase()}`}>
               <div
                 key={idx}
+                data-aos="fade-up"
+                data-aos-delay={idx * 200}
                 className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+                
               >
                 <img
                   src={car.image}

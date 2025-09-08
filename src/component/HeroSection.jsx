@@ -37,7 +37,7 @@ const HeroSection = () => {
 
       {/* Hero Text */}
       <div className="absolute bottom-24 left-12 z-10">
-        <h1 className="text-white text-4xl font-semibold">Individualisation.</h1>
+        <h1 className="text-white text-4xl font-semibold" data-aos="fade-up">Individualisation.</h1>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const FindPorsche = () => {
   return (
-    <div className="lg:px-40 px-5">
+    <div className="lg:px-40 px-5" data-aos="fade-up">
     <div className="flex md:flex-row flex-col bg-red-950 lg:h-96 max-w-6xl mt-30 mx-auto rounded-xl overflow-hidden shadow-lg">
       {/* Left Image Section */}
       <div className="w-full lg:w-1/2">

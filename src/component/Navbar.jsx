@@ -1,5 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import { ChevronRight, Menu, User2, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,17 +34,21 @@ const Navbar = () => {
     {/* Center: Logo */}
     <div className="flex-1 flex justify-center">
       {/* Large screen logo */}
+      <NavLink to="/">
       <img
         className="hidden lg:block w-40"
         src="../../public/image-removebg-preview (15).png"
         alt="Logo"
       />
+      </NavLink>
       {/* Mobile logo */}
+      <NavLink to="/">
       <img
         className="block lg:hidden sm:w-10 w-8"
         src="https://cdn.ui.porsche.com/porsche-design-system/crest/porsche-crest.2245c45@2x.webp"
         alt="Logo"
       />
+      </NavLink>
     </div>
 
     {/* Right: User icon (hide below sm) */}

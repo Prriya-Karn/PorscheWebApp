@@ -27,7 +27,7 @@ const Discover = () => {
     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-2xl px-4 md:px-0  gap-4 md:max-w-2xl lg:max-w-3xl mx-auto">
     
       {cards.map((card, idx) => (
-        <div
+        <div data-aos="fade-up" data-aos-delay={idx * 200}
           key={idx}
           className="
             group relative rounded-xl overflow-hidden shadow-lg cursor-pointer 

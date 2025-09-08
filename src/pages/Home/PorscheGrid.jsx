@@ -33,7 +33,7 @@ export default function PorscheGrid({ isPorscheGridVisible }) {
   return (
     <Fragment>
       <div className="mt-20">
-        <h1
+        <h1 data-aos="fade-up"
           className={`lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide ${
             isPorscheGridVisible ? "text-white" : "text-black"
           }`}
