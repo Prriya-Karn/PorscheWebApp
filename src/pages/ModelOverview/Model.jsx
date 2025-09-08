@@ -155,39 +155,39 @@ export default function Model() {
   return (
     <div>
       <Navbar />
-    <div className="bg-gray-100 min-h-screen p-6 md:p-12">
-      {/* Heading */}
+      <div className="bg-gray-100 min-h-screen p-6 md:p-12">
+        {/* Heading */}
         <h1 className="text-2xl mt-20 font-bold mb-8">Model overview</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Sidebar */}
-        <aside className="md:col-span-1 p-4 rounded">
-          <h2 className="font-semibold mb-4">Models</h2>
-          <div className="flex flex-col gap-2 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Sidebar */}
+          <aside className="md:col-span-1 p-4 rounded">
+            <h2 className="font-semibold mb-4">Models</h2>
+            <div className="flex flex-col gap-2 mb-6">
               {["All (19)", "911", "Taycan", "Panamera", "718"].map((m, i) => (
-              <label key={i} className="flex items-center gap-2 cursor-pointer">
+                <label key={i} className="flex items-center gap-2 cursor-pointer">
                   <input onClick={() => handleRadioInput(m)}
                     type="radio" name="model" className="accent-black" defaultChecked={m.includes(title)} />
-                <span>{m}</span>
-              </label>
+                  <span>{m}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Filters */}
+            {["Body Design", "Seats", "Drive", "Fueltype"].map((f, i) => (
+              <details key={i} className="border-t border-gray-200 py-2">
+                <summary className="cursor-pointer font-medium">{f}</summary>
+              </details>
             ))}
-          </div>
 
-          {/* Filters */}
-          {["Body Design", "Seats", "Drive", "Fueltype"].map((f, i) => (
-            <details key={i} className="border-t border-gray-200 py-2">
-              <summary className="cursor-pointer font-medium">{f}</summary>
-            </details>
-          ))}
+            {/* Reset Button */}
+            <button className="mt-6 w-full border border-black py-2 rounded hover:bg-black hover:text-white transition">
+              Reset Filter
+            </button>
+          </aside>
 
-          {/* Reset Button */}
-          <button className="mt-6 w-full border border-black py-2 rounded hover:bg-black hover:text-white transition">
-            Reset Filter
-          </button>
-        </aside>
-
-        {/* Models Grid */}
-        <section className="md:col-span-3">
+          {/* Models Grid */}
+          <section className="md:col-span-3">
             <h2 className="text-xl font-semibold mb-6 capitalize">{title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 
@@ -210,18 +210,18 @@ export default function Model() {
 
                           <p className="font-semibold mt-2 text-xs">{e.speed}</p>
                           <p className="text-gray-500 text-xs">Top speed</p>
-                </div>
+                        </div>
 
-                {/* Buttons */}
-                <div className="flex gap-2 mt-4">
-                  <button className="flex-1 bg-black text-sm text-white py-2 rounded hover:bg-gray-800 transition">
-                    Select model
-                  </button>
-                  <button className="flex-1 border border-black text-sm py-2 rounded hover:bg-black hover:text-white transition">
-                    Compare
-                  </button>
-                </div>
-              </div>
+                        {/* Buttons */}
+                        <div className="flex gap-2 mt-4">
+                          <button className="flex-1 bg-black text-sm text-white py-2 rounded hover:bg-gray-800 transition">
+                            Select model
+                          </button>
+                          <button className="flex-1 border border-black text-sm py-2 rounded hover:bg-black hover:text-white transition">
+                            Compare
+                          </button>
+                        </div>
+                      </div>
 
                     </Fragment>
                   )
@@ -229,10 +229,10 @@ export default function Model() {
               }
 
 
-          </div>
-        </section>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ const cards = [
 const Discover = () => {
   return (
 <div>
-    <div className="w-full flex mt-30 justify-center py-12 bg-white">
+    <div className="w-full flex mt-20 justify-center py-12 bg-white">
     <h2 className="text-3xl font-bold leading-snug">
       Discover
     </h2>
@@ -38,7 +38,7 @@ const Discover = () => {
           <img 
             src={card.image} 
             alt={card.title} 
-            className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105" 
+            className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105" 
           />
 
           {/* Overlay Content */}

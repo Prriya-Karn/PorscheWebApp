@@ -3,17 +3,23 @@ import InteriorExter from "./InteriorExter";
 import HighlightsCard from "./HighlightsCard";
 import Contact from "./Contact";
 
-export default function CarOverview() {
+export default function CarOverview({car}) {
     return (
         <Fragment>
         <div className="bg-white">
-            <div className="flex mt-20 mb-12 justify-center">
+        
+        {
+            car.map((e) => (
+                <Fragment key={e.title}>
+                    <div className="flex mt-20 mb-12 justify-center">
                 <img
                     className="w-96 max-w-full"
-                    src="https://cdn.ui.porsche.com/porsche-design-system/model-signatures/panamera.6dae809.svg"
+                    src={e.textImg}
                 />
             </div>
-
+                </Fragment>
+            ))
+        }
             {/* Wrapper for Top Image + Black Section */}
             <div className="relative">
                 {/* Top Large Image */}

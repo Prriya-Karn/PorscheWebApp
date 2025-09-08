@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 const cars = [
@@ -28,50 +29,58 @@ const cars = [
   },
 ];
 
-export default function PorscheGrid() {
+export default function PorscheGrid({ isPorscheGridVisible }) {
   return (
-    <div className="w-full flex justify-center py-12 bg-black">
-      <div className="flex gap-6 max-w-5xl w-full px-4 group">
-        {cars.map((car, idx) => (
 
-          <div
-            key={idx}
-            className="
+    <Fragment>
+      <div className="mt-20">
+        <h1 className={`text-5xl px-10 mb-20 tracking-wide ${isPorscheGridVisible ? "text-white" : "text-black"}`}>Your Porsche journey starts now.</h1>
+      
+      <div className="w-full flex justify-center">
+        <div className="flex gap-6 max-w-6xl w-full px-4 group">
+
+          {cars.map((car, idx) => (
+
+            <div
+              key={idx}
+              className="
               relative rounded-xl overflow-hidden shadow-lg cursor-pointer
               transition-all duration-500 ease-in-out
               flex-[1] h-[500px]
               group-hover:flex-[0.5]
               hover:flex-[2]
             "
-          >
-            <NavLink to={`/model/${car.title}`}>
-            {/* Car image */}
-            <img
-              src={car.image}
-              alt={car.title}
-              className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-            />
-            
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
-            
-            {/* Top Title */}
-            <h2 className="absolute top-3 left-3 text-white text-3xl font-bold tracking-wide">
-              {car.title}
-            </h2>
-            
-            {/* Bottom Details */}
-            <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
-              <p className="text-white text-sm max-w-[80%] leading-snug">
-                {car.description}
-              </p>
-              <ArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </div>
-            </NavLink>
-          </div>
+            >
+              <NavLink to={`/model/${car.title}`}>
+                {/* Car image */}
+                <img
+                  src={car.image}
+                  alt={car.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                />
 
-        ))}
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
+
+                {/* Top Title */}
+                <h2 className="absolute top-3 left-3 text-white text-3xl font-bold tracking-wide">
+                  {car.title}
+                </h2>
+
+                {/* Bottom Details */}
+                <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+                  <p className="text-white text-sm max-w-[80%] leading-snug">
+                    {car.description}
+                  </p>
+                  <ArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </NavLink>
+            </div>
+
+          ))}
+        </div>
       </div>
-    </div>
+      </div>
+    </Fragment>
   );
 }
