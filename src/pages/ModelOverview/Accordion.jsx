@@ -50,7 +50,9 @@ const Accordion = () => {
         <Fragment>
             <div className="flex flex-col gap-10 md:flex-row min-h-screen p-8 bg-gray-50">
                 <div
-                    className={`bg-white w-[710px] rounded-lg shadow-lg overflow-hidden transition-all duration-500 ${acc ? "max-h-[1200px]" : "max-h-[60px]"
+                    className={` md:w-[710px] w-full 
+                        rounded-lg shadow-lg overflow-hidden 
+                        transition-all duration-500 ${acc ? "max-h-[1200px]" : "max-h-[60px]"
                         }`}
                 >
                     {/* Accordion Header */}

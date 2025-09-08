@@ -25,7 +25,7 @@ const Configure = () => {
 
     return (
         <Fragment>
-            <div className="flex flex-col pt-30 gap-10 md:flex-row min-h-screen p-8 bg-gray-50">
+            <div className="flex flex-col pt-30 gap-10 lg:flex-row min-h-screen p-8 bg-gray-50">
                 {/* Left Side: Car Image */}
                 <div className="flex-[2] rounded-lg flex items-center justify-center"
                     style={{
