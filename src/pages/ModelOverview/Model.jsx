@@ -154,7 +154,6 @@ export default function Model() {
 
   return (
     <div>
-      <Navbar />
       <div className="bg-gray-100 min-h-screen p-6 md:p-12">
         {/* Heading */}
         <h1 className="text-2xl mt-20 font-bold mb-8">Model overview</h1>
