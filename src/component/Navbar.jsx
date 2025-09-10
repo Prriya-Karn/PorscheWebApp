@@ -37,7 +37,7 @@ const Navbar = () => {
       <NavLink to="/">
       <img
         className="hidden lg:block w-40"
-        src="../../public/image-removebg-preview (15).png"
+                src="image-removebg-preview (15).png"
         alt="Logo"
       />
       </NavLink>
