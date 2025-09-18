@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Accordion from "./Accordion";
 
 const Configure = () => {
+
     const [carColor, setCarColor] = useState("#090909");
 
     const categories = {

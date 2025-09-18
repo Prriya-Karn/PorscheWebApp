@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
-import { ChevronRight, Menu, User2, X } from "lucide-react";
+import { ChevronRight, Handbag, Heart, Menu, User2, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import Wishlist from "../pages/Wishlist";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +21,8 @@ const Navbar = () => {
   return (
     <Fragment>
       {/* Navbar (only visible when sidebar is closed) */}
-     {/* Navbar (only visible when sidebar is closed) */}
 {!isOpen && (
-  <div className="top-0 left-0 w-full flex items-center justify-between pl-4 pr-5 lg:px-8 py-4 bg-black/20 fixed z-50">
+        <div className="top-0 left-0 w-full flex items-center justify-between pl-4 pr-5 lg:px-8 py-4 bg-black/20 fixed z-50">
     {/* Left: Menu button */}
     <button
       onClick={() => setIsOpen(true)}
@@ -31,13 +31,15 @@ const Navbar = () => {
       <Menu className="w-4 h-4" /> Menu
     </button>
 
+
+
     {/* Center: Logo */}
     <div className="flex-1 flex justify-center">
       {/* Large screen logo */}
       <NavLink to="/">
       <img
-        className="hidden lg:block w-40"
-                src="image-removebg-preview (15).png"
+                className="hidden lg:block w-8"
+                src="https://cdn.ui.porsche.com/porsche-design-system/crest/porsche-crest.2245c45@2x.webp"
         alt="Logo"
       />
       </NavLink>
@@ -51,10 +53,20 @@ const Navbar = () => {
       </NavLink>
     </div>
 
-    {/* Right: User icon (hide below sm) */}
-    <button className="text-white text-xs cursor-pointer hidden sm:block">
-      <User2 className="w-5 h-5" />
-    </button>
+          <div className="flex justify-between gap-5">
+            <NavLink to="/wishlist">
+              <Heart className="w-5 h-5" />
+            </NavLink>
+
+            <button className="text-xs cursor-pointer hidden sm:block">
+              <User2 className="w-5 h-5" />
+            </button>
+
+            <NavLink>
+              <Handbag className="w-5 h-5" />
+            </NavLink>
+
+          </div>
   </div>
 )}
 

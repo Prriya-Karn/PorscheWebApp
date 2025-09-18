@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import HeroSection from "./component/HeroSection";
 import CarCards from "./pages/Home/CarCards";
 import PorscheGrid from "./pages/Home/PorscheGrid";
@@ -13,6 +13,9 @@ import Configure from "./pages/ModelOverview/Configure";
 import Navbar from "./component/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Wishlist from "./pages/Wishlist";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [isPorscheGridVisible, setIsPorscheGridVisible] = useState(false);
@@ -65,9 +68,20 @@ const App = () => {
       window.removeEventListener("scroll", checkVisibility);
       window.removeEventListener("resize", checkVisibility);
     };
-  }, [location.pathname]); // 👈 run check whenever route changes
+  }, [location.pathname]);
 
   return (
+    <Fragment>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     <div
       className={`transition-colors duration-200 ease-in-out ${
         isPorscheGridVisible ? "bg-black" : "bg-white"
@@ -96,10 +110,12 @@ const App = () => {
         />
         <Route path="/model/:title" element={<Model />} />
         <Route path="/configure" element={<Configure />} />
+          <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
 
       <Footer />
     </div>
+    </Fragment>
   );
 };
 
