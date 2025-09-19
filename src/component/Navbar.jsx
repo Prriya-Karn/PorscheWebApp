@@ -62,7 +62,7 @@ const Navbar = () => {
               <User2 className="w-5 h-5" />
             </button>
 
-            <NavLink>
+            <NavLink to="/cart">
               <Handbag className="w-5 h-5" />
             </NavLink>
 

@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Heart } from "lucide-react";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -34,9 +34,8 @@ export default function PorscheGrid({ isPorscheGridVisible }) {
     <Fragment>
       <div className="mt-20">
         <h1 data-aos="fade-up"
-          className={`lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide ${
-            isPorscheGridVisible ? "text-white" : "text-black"
-          }`}
+          className={`lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide ${isPorscheGridVisible ? "text-white" : "text-black"
+            }`}
         >
           Your Porsche journey starts now.
         </h1>

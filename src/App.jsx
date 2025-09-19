@@ -16,6 +16,7 @@ import "aos/dist/aos.css";
 import Wishlist from "./pages/Wishlist";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cart from "./pages/Cart";
 
 const App = () => {
   const [isPorscheGridVisible, setIsPorscheGridVisible] = useState(false);
@@ -111,6 +112,7 @@ const App = () => {
         <Route path="/model/:title" element={<Model />} />
         <Route path="/configure" element={<Configure />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
       </Routes>
 
       <Footer />

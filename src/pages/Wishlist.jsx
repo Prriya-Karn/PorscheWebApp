@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { delWishlist } from "../store/slices/SliceWish";
-import { delAllWish } from "../store/actions";
+import { addToBag } from "../store/slices/SliceWish";
+import { delAllWish, delIndividualWish } from "../store/actions";
 import { X } from "lucide-react";
 import { toast } from "react-toastify";
 import { cars } from "../database/carCardData";
 
 const WishlistItem = () => {
     const data = useSelector((state) => state.wish);
+    const getCartData = useSelector((state) => state.cart)
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
@@ -16,13 +17,35 @@ const WishlistItem = () => {
         })
         toast.success(`${getdelData.title} is deleted 😔`)
         console.log(getdelData)
-        dispatch(delWishlist(id));
+        dispatch(delIndividualWish(id));
     };
 
     const handleDeleteAll = () => {
         toast.success(`All are  deleted 😔`)
         dispatch(delAllWish());
     };
+
+    const handleAddToCart = (id) => {
+        const filter = cars.find((e) => {
+            return e.id == id
+        })
+        dispatch(addToBag(filter))
+
+        const checkDataPresentInCartOrNot = getCartData.some((e) => {
+            return e.id == id
+        })
+
+        if (!checkDataPresentInCartOrNot) {
+            dispatch(delIndividualWish(id))
+            toast.success("added to cart")
+        } else {
+            toast.success("already added 😀")
+        }
+
+
+
+
+    }
 
     return (
         <div className="max-w-7xl mt-20 mx-auto h-screen p-6">
@@ -48,8 +71,9 @@ const WishlistItem = () => {
                 {data.map((product) => (
                     <div
                         key={product.id} style={{ border: "1px solid gray" }}
-                        className="relative flex border-2 border-gray-500 flex-col items-center shadow hover:shadow-lg transition"
-                    >
+                        className="relative flex border-2
+                         border-gray-500 flex-col items-center 
+                           shadow hover:shadow-lg transition">
                         {/* Delete button */}
                         <button
                             onClick={() => handleDelete(product.id)}
@@ -88,7 +112,8 @@ const WishlistItem = () => {
                         </div>
 
                         {/* Button */}
-                        <button className="mt-3 w-full  text-red-400 py-2 text-sm" style={{ borderTop: "1px solid gray" }}>
+                        <button onClick={() => handleAddToCart(product.id)}
+                            className="mt-3 w-full cursor-pointer  text-red-400 py-2 text-sm" style={{ borderTop: "1px solid gray" }}>
                             Move to Bag
                         </button>
                     </div>
