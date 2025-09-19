@@ -17,6 +17,7 @@ import Wishlist from "./pages/Wishlist";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Cart from "./pages/Cart";
+import Compare from "./pages/Compare";
 
 const App = () => {
   const [isPorscheGridVisible, setIsPorscheGridVisible] = useState(false);
@@ -113,6 +114,7 @@ const App = () => {
         <Route path="/configure" element={<Configure />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/compare/:variant" element={<Compare />} />
       </Routes>
 
       <Footer />

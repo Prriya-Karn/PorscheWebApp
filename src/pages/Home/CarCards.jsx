@@ -48,10 +48,16 @@ export default function CarCards() {
                   handleWishlist(car.id);
                   toast.success(`${car.title} added to wishlist ❤️`);
                 }}
-                className="absolute cursor-pointer top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/80 p-2 rounded-full shadow"
+                className="
+    absolute cursor-pointer top-3 right-3
+    opacity-100 md:opacity-0 md:group-hover:opacity-100
+    transition-opacity duration-300
+    bg-white/80 p-2 rounded-full shadow
+  "
               >
                 <Heart className="w-5 h-5 text-red-500" />
               </button>
+
 
               {/* Text & Arrow */}
               <div className="absolute bottom-4 left-4 flex items-center justify-between w-[calc(100%-2rem)]">

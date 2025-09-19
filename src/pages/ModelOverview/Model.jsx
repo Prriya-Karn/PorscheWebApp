@@ -1,139 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Navbar from "../../component/Navbar";
-import { useNavigate, useParams } from "react-router-dom";
-
-// modelsData.js
-const models = {
-  Taycan: [
-    {
-      title: "Taycan",
-      variant: "Taycan",
-      tag: "Electric",
-      price: "₹ 1,69,78,000.00 incl. VAT*",
-      accel: "4.8 s",
-      power: "300 kW / 408 PS",
-      speed: "230 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-    {
-      title: "Taycan",
-      variant: "Taycan 4S",
-      tag: "Electric",
-      price: "₹ 1,95,89,000.00 incl. VAT*",
-      accel: "3.7 s",
-      power: "440 kW / 598 PS",
-      speed: "250 km/h",
-      img: "https://images-porsche.imgix.net/-/media/EFA98263729F4470939DD168693247DB_BF96D641472449529407A93C5F498A9D_taycan_4s_black_edition_sideshot_corr?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-    {
-      title: "Taycan",
-      variant: "Taycan 4S Black Edition",
-      tag: "Electric",
-      price: "₹ 2,07,10,000.00 incl. VAT*",
-      accel: "3.7 s",
-      power: "440 kW / 598 PS",
-      speed: "250 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-    {
-      title: "Taycan",
-      variant: "Taycan Turbo",
-      tag: "Electric",
-      price: "₹ 2,69,46,000.00 incl. VAT*",
-      accel: "2.7 s",
-      power: "650 kW / 884 PS",
-      speed: "260 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-  ],
-
-  911: [
-    {
-      title: "911",
-      variant: "911 Carrera",
-      tag: "Petrol",
-      price: "₹ 1,84,00,000",
-      accel: "4.2 s",
-      power: "283 kW / 385 PS",
-      speed: "293 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-    {
-      title: "911",
-      variant: "911 Carrera S",
-      tag: "Petrol",
-      price: "₹ 2,10,00,000",
-      accel: "3.5 s",
-      power: "316 kW / 430 PS",
-      speed: "305 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-
-    },
-    {
-      title: "911",
-      variant: "911 Turbo",
-      tag: "Petrol",
-      price: "₹ 2,40,00,000",
-      accel: "2.9 s",
-      power: "427 kW / 580 PS",
-      speed: "320 km/h",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-
-    },
-  ],
-  Panamera: [
-    {
-      power: "427 kW / 580 PS",
-      speed: "320 km/h",
-      accel: "2.9 s",
-      tag: "Gasoline",
-      title: "Panamera",
-      variant: "Panamera 4 E-Hybrid",
-      description: "A luxury sports sedan combining performance and efficiency with hybrid technology.",
-      price: "₹1.65 Cr",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-
-    },
-    {
-      power: "427 kW / 580 PS",
-      speed: "320 km/h",
-      accel: "2.9 s",
-      tag: "Gasoline",
-      title: "Panamera",
-      variant: "Panamera Turbo S",
-      description: "High-performance Panamera with turbocharged V8 engine and sporty design.",
-      price: "₹2.12 Cr",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-
-    },
-  ],
-  718: [
-    {
-      power: "427 kW / 580 PS",
-      speed: "320 km/h",
-      accel: "2.9 s",
-      tag: "Electric",
-      title: "718",
-      variant: "718 Cayman",
-      description: "Mid-engine coupe with outstanding handling and pure driving pleasure.",
-      price: "₹1.20 Cr",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-
-    },
-    {
-      power: "427 kW / 580 PS",
-      speed: "320 km/h",
-      accel: "2.9 s",
-      tag: "Electric",
-      title: "718",
-      variant: "718 Boxster",
-      description: "Open-top roadster that delivers iconic Porsche performance.",
-      price: "₹1.25 Cr",
-      img: "https://images-porsche.imgix.net/-/media/5F3468201ACF4D2CA8B3012BC9FB9774_1605711B6C234CDFB427AECC09D32468_TA24Q3CIX0010-taycan-4s-side?w=1200&q=45&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-  ],
-};
-
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import models from "../../database/ModelData";
 
 export default function Model() {
   const navigate = useNavigate();
@@ -179,10 +47,7 @@ export default function Model() {
               </details>
             ))}
 
-            {/* Reset Button */}
-            <button className="mt-6 w-full border border-black py-2 rounded hover:bg-black hover:text-white transition">
-              Reset Filter
-            </button>
+
           </aside>
 
           {/* Models Grid */}
@@ -192,6 +57,7 @@ export default function Model() {
 
               {
                 data.map((e) => {
+                  console.log(data)
                   return (
                     <Fragment>
                       <div className="bg-white rounded-2xl hover:shadow-2xl cursor-pointer p-6 flex flex-col min-h-[500px]">
@@ -213,21 +79,20 @@ export default function Model() {
 
                         {/* Buttons */}
                         <div className="flex gap-2 mt-4">
-                          <button className="flex-1 bg-black text-sm text-white py-2 rounded hover:bg-gray-800 transition">
-                            Select model
-                          </button>
-                          <button className="flex-1 border border-black text-sm py-2 rounded hover:bg-black hover:text-white transition">
+
+
+
+                          <NavLink to={`/compare/${e.variant.split(" ").join("")}`}
+                            className="flex-1 text-center border border-black text-sm py-2 rounded hover:bg-black hover:text-white transition">
                             Compare
-                          </button>
+                          </NavLink>
+
                         </div>
                       </div>
-
                     </Fragment>
                   )
                 })
               }
-
-
             </div>
           </section>
         </div>
