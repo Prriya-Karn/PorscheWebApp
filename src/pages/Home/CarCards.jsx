@@ -37,7 +37,7 @@ export default function CarCards() {
               <img
                 src={car.image}
                 alt={car.title}
-                className="w-full h-40 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-40 md:object-cover transform transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Overlay gradient */}

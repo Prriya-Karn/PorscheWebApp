@@ -48,7 +48,7 @@ const WishlistItem = () => {
     }
 
     return (
-        <div className="max-w-7xl mt-20 mx-auto h-screen p-6">
+        <div className="max-w-7xl mt-20 mx-auto p-6">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-lg">

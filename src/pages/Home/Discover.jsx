@@ -16,6 +16,7 @@ const cards = [
   },
 ];
 
+
 const Discover = () => {
   return (
 <div>
@@ -24,36 +25,40 @@ const Discover = () => {
       Discover
     </h2>
     </div>
-    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-2xl px-4 md:px-0  gap-4 md:max-w-2xl lg:max-w-3xl mx-auto">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1
+     max-w-2xl px-4 md:px-0  gap-4 md:max-w-2xl lg:max-w-5xl  mx-auto">
     
-      {cards.map((card, idx) => (
-        <div data-aos="fade-up" data-aos-delay={idx * 200}
-          key={idx}
-          className="
-            group relative rounded-xl overflow-hidden shadow-lg cursor-pointer 
-            transition-all duration-500 ease-in-out
-          "
-        >
-          {/* Background Image */}
-          <img 
-            src={card.image} 
-            alt={card.title} 
-            className="w-full h-70   object-cover transition-transform duration-500 group-hover:scale-105" 
-          />
+        {cards.map((card, idx) => (
+          <div
+            key={idx}
+            data-aos="fade-up" data-aos-delay={idx * 200}
+            className="
+      group relative w-full rounded-xl overflow-hidden shadow-lg cursor-pointer
+      transition-all duration-500 ease-in-out
+    "
+          >
+            {/* Background Image */}
+            <img
+              src={card.image}
+              alt={card.title} 
+              className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
 
-          {/* Overlay Content */}
-          <div className="absolute inset-0 bg-black/30 opacity-100  transition-opacity duration-500"></div>
-         {/* Content on top of overlay */}
-<div className="absolute inset-0 flex items-end p-4">
-<div className="flex items-center justify-between w-full">
-  <h2 className="text-white text-md z-10">
-    {card.title}
-  </h2>
-  <ArrowRight className="text-white w-6 h-6 z-10 group-hover:translate-x-1 transition-transform duration-300" />
-</div>
-</div>
-        </div>
-      ))}
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/30 opacity-100 transition-opacity duration-500"></div>
+
+            {/* Content */}
+            <div className="absolute inset-0 flex items-end p-4">
+              <div className="flex items-center justify-between w-full">
+                <h2 className="text-white text-md z-10">
+                  {card.title}
+                </h2>
+                <ArrowRight className="text-white w-6 h-6 z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+            </div>
+          </div>
+        ))}
+
     </div>
     </div>
   );

@@ -37,18 +37,18 @@ const Compare = () => {
 
     return (
         <Fragment>
-            <div className="min-h-screen mt-30 bg-white">
+            <div className="min-h-screen md:mt-30 bg-white">
                 {/* Title Section */}
-                <div className="text-center pt-12">
+                <div className="text-center  pt-12">
                     <h1 className="text-4xl font-bold">Model comparison</h1>
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-gray-500 px-10  mt-2">
                         Do you need help deciding? Now you can compare your favourites with each other.
                     </p>
                 </div>
 
                 {/* Model Section */}
-                <div className="mt-12 w-full flex justify-center gap-8">
-                    <div className="flex flex-col items-center mt-16">
+                <div className="mt-12 w-full flex sm:flex-row flex-col justify-center sm:gap-8">
+                    <div className="flex flex-col items-center sm:mt-16">
                         {filterData.map((e, indx) => (
                             <div
                                 key={indx}
@@ -56,9 +56,7 @@ const Compare = () => {
                             >
                                 {/* Change Model + Select model row */}
                                 <div className="w-full flex justify-between items-center mb-6">
-                                    <p className="text-gray-600 cursor-pointer hover:underline">
-                                        Change model ↔
-                                    </p>
+
 
                                     {
                                         compareData.length == 0 ? <button onClick={OpenModal} className="px-5 py-2 bg-gray-100 hover:bg-gray-200 rounded shadow-sm">
@@ -100,7 +98,7 @@ const Compare = () => {
                         />
 
                     </div>
-                    <div className="flex flex-col items-center mt-28">
+                    <div className="flex  flex-col items-center mt-16">
                         {
                             compareData.map((e, indx) => {
                                 return (
@@ -124,7 +122,7 @@ const Compare = () => {
                                                 <p className="text-gray-600 mt-1">From {e.price}</p>
 
                                                 {/* Gear type */}
-                                                <p className="text-gray-500 mt-6 text-sm uppercase">Gear type</p>
+                                                <p className="text-gray-500 mt-10 text-sm uppercase">Gear type</p>
                                                 <p className="text-lg">{e.transmission || "8-speed automatic"}</p>
                                             </div>
 

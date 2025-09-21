@@ -29,7 +29,7 @@ const HeroSection = () => {
             <img
               src={src}
               alt={`Hero Background ${idx}`}
-              className="w-full h-full bg-no-repeat object-cover"
+              className="w-full h-full bg-no-repeat  md:object-cover"
             />
           </SwiperSlide>
         ))}

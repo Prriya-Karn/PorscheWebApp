@@ -13,9 +13,9 @@ const Cart = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 mt-20 px-6 py-10">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10">
+            <div className="sm:max-w-6xl  sm:mx-auto  grid lg:grid-cols-3 gap-10">
                 {/* Left: Cart Items */}
-                <div className="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+                <div className="lg:col-span-2 w-full bg-white rounded-2xl shadow p-6">
                     <h1 className="text-2xl font-bold mb-6">
                         Shopping Cart{" "}
                         <span className="text-pink-500 text-lg">
@@ -27,14 +27,14 @@ const Cart = () => {
                         {cartData.map((item) => (
                             <div
                                 key={item.id}
-                                className="flex items-center justify-between  pb-4"
+                                className="flex sm:flex-row flex-col items-center justify-between  pb-4"
                             >
                                 {/* Product Info */}
-                                <div className="flex items-center gap-4">
+                                <div className="flex sm:flex-row flex-col items-center gap-4">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-20 h-20 object-cover rounded-lg"
+                                        className="sm:w-20 sm:h-20 object-cover rounded-lg"
                                     />
                                     <div>
                                         <h2 className="font-semibold text-gray-800">
@@ -47,7 +47,7 @@ const Cart = () => {
                                 </div>
 
                                 {/* Price + Delete */}
-                                <div className="flex items-center gap-6">
+                                <div className="flex justify-center items-center gap-6">
                                     <span className="font-semibold text-gray-800">
                                         ₹{item.price}
                                     </span>
@@ -61,7 +61,7 @@ const Cart = () => {
                 </div>
 
                 {/* Right: Summary */}
-                <div className="bg-white rounded-2xl shadow p-6">
+                <div className="w-full rounded-2xl shadow p-6">
                     <h2 className="text-lg font-bold mb-4">Order Summary</h2>
 
                     {/* Address */}
@@ -87,13 +87,13 @@ const Cart = () => {
                         <p className="font-semibold text-gray-700 mb-1">
                             Do you have a discount code?
                         </p>
-                        <div className="flex gap-2">
+                        <div className="flex sm:flex-row flex-col gap-2">
                             <input
                                 type="text"
                                 placeholder="Your code here"
                                 className="flex-1 border rounded-lg px-3 py-2 text-sm"
                             />
-                            <button className="bg-gray-800 text-white px-4 rounded-lg">
+                            <button className="bg-gray-800 text-white px-4 py-2 rounded-lg">
                                 Apply
                             </button>
                         </div>

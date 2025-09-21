@@ -29,13 +29,13 @@ const cars = [
   },
 ];
 
-export default function PorscheGrid({ isPorscheGridVisible }) {
+export default function PorscheGrid() {
   return (
     <Fragment>
-      <div className="mt-20">
+      <div className="mt-20 py-20 bg-black">
         <h1 data-aos="fade-up"
-          className={`lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide ${isPorscheGridVisible ? "text-white" : "text-black"
-            }`}
+          className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl px-10 mb-20 tracking-wide text-white"
+
         >
           Your Porsche journey starts now.
         </h1>
@@ -65,7 +65,7 @@ export default function PorscheGrid({ isPorscheGridVisible }) {
                       <img
                         src={car.image}
                         alt={car.title}
-                        className="w-full md:h-full h-[500px] object-cover transform transition-transform duration-500 hover:scale-105"
+                        className="w-full md:h-full h-[500px] md:object-cover transform transition-transform duration-500 hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
                       <h2 className="absolute top-3 left-3 text-white text-3xl font-bold tracking-wide">

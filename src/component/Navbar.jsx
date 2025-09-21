@@ -22,7 +22,7 @@ const Navbar = () => {
     <Fragment>
       {/* Navbar (only visible when sidebar is closed) */}
 {!isOpen && (
-        <div className="top-0 left-0 w-full flex items-center justify-between pl-4 pr-5 lg:px-8 py-4 bg-black/20 fixed z-50">
+        <div className="top-0 left-0 w-full flex items-center justify-between pl-4 pr-5 lg:px-8 py-4 bg-black/20 md:fixed md:z-50">
     {/* Left: Menu button */}
     <button
       onClick={() => setIsOpen(true)}
@@ -37,11 +37,8 @@ const Navbar = () => {
     <div className="flex-1 flex justify-center">
       {/* Large screen logo */}
       <NavLink to="/">
-      <img
-                className="hidden lg:block w-8"
-                src="https://cdn.ui.porsche.com/porsche-design-system/crest/porsche-crest.2245c45@2x.webp"
-        alt="Logo"
-      />
+              <img className="hidden lg:block w-8"
+                src="https://cdn.ui.porsche.com/porsche-design-system/crest/porsche-crest.2245c45@2x.webp" alt="Logo" />
       </NavLink>
       {/* Mobile logo */}
       <NavLink to="/">
